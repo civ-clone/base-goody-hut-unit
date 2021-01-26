@@ -27,6 +27,7 @@ class Unit extends Action_1.default {
         __classPrivateFieldSet(this, _rulesRegistry, rulesRegistry);
     }
     perform() {
+        // TODO: this should be controlled via `Rule`s or similar
         const availableUnits = [Units_1.Horseman, Units_1.Swordman], RandomUnit = availableUnits[Math.floor(availableUnits.length * __classPrivateFieldGet(this, _randomNumberGenerator).call(this))];
         new RandomUnit(null, // TODO: detect nearby city, same as civ1
         this.unit().player(), this.unit().tile(), __classPrivateFieldGet(this, _rulesRegistry));

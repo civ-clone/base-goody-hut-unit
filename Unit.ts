@@ -14,7 +14,7 @@ export class Unit extends Action {
   constructor(
     goodyHut: GoodyHut,
     unit: PlayerUnit,
-    randomNumberGenerator: () => number = () => Math.random(),
+    randomNumberGenerator: () => number = (): number => Math.random(),
     rulesRegistry: RuleRegistry = ruleRegistryInstance
   ) {
     super(goodyHut, unit);
@@ -24,6 +24,7 @@ export class Unit extends Action {
   }
 
   perform(): void {
+    // TODO: this should be controlled via `Rule`s or similar
     const availableUnits = [Horseman, Swordman],
       RandomUnit =
         availableUnits[
