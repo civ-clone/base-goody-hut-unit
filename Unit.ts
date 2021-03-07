@@ -1,4 +1,4 @@
-import { Action, IGoodyHutAction } from '@civ-clone/core-goody-hut/Action';
+import { Action, IAction } from '@civ-clone/core-goody-hut/Action';
 import {
   RuleRegistry,
   instance as ruleRegistryInstance,
@@ -7,7 +7,7 @@ import { Unit as UnitRule, IUnitRegistry } from './Rules/Unit';
 import GoodyHut from '@civ-clone/core-goody-hut/GoodyHut';
 import PlayerUnit from '@civ-clone/core-unit/Unit';
 
-export class Unit extends Action implements IGoodyHutAction {
+export class Unit extends Action implements IAction {
   #randomNumberGenerator: () => number;
   #ruleRegistry: RuleRegistry;
 

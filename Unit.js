@@ -27,8 +27,7 @@ class Unit extends Action_1.Action {
         __classPrivateFieldSet(this, _ruleRegistry, rulesRegistry);
     }
     perform() {
-        __classPrivateFieldGet(this, _ruleRegistry)
-            .process(Unit_1.Unit, this.goodyHut(), this.unit());
+        __classPrivateFieldGet(this, _ruleRegistry).process(Unit_1.Unit, this.goodyHut(), this.unit());
     }
 }
 exports.Unit = Unit;
