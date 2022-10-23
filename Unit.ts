@@ -3,9 +3,9 @@ import {
   RuleRegistry,
   instance as ruleRegistryInstance,
 } from '@civ-clone/core-rule/RuleRegistry';
-import { Unit as UnitRule, IUnitRegistry } from './Rules/Unit';
 import GoodyHut from '@civ-clone/core-goody-hut/GoodyHut';
 import PlayerUnit from '@civ-clone/core-unit/Unit';
+import UnitRule from './Rules/Unit';
 
 export class Unit extends Action implements IAction {
   #randomNumberGenerator: () => number;
@@ -24,11 +24,7 @@ export class Unit extends Action implements IAction {
   }
 
   perform(): void {
-    (this.#ruleRegistry as IUnitRegistry).process(
-      UnitRule,
-      this.goodyHut(),
-      this.unit()
-    );
+    this.#ruleRegistry.process(UnitRule, this.goodyHut(), this.unit());
   }
 }
 

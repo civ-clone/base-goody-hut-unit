@@ -1,4 +1,3 @@
 # base-goody-hut-unit
 
-This is a template repo.
-
+This package provides the `Unit` (`...a friendly tribe of skilled mercenaries!`) `GoodyHut`.
