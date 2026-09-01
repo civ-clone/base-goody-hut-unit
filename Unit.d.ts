@@ -3,7 +3,8 @@ import { RuleRegistry } from '@civ-clone/core-rule/RuleRegistry';
 import GoodyHut from '@civ-clone/core-goody-hut/GoodyHut';
 import PlayerUnit from '@civ-clone/core-unit/Unit';
 export declare class Unit extends Action implements IAction {
-  #private;
+  private _randomNumberGenerator;
+  private _ruleRegistry;
   constructor(
     goodyHut: GoodyHut,
     unit: PlayerUnit,

@@ -8,8 +8,8 @@ import PlayerUnit from '@civ-clone/core-unit/Unit';
 import UnitRule from './Rules/Unit';
 
 export class Unit extends Action implements IAction {
-  #randomNumberGenerator: () => number;
-  #ruleRegistry: RuleRegistry;
+  private _randomNumberGenerator: () => number;
+  private _ruleRegistry: RuleRegistry;
 
   constructor(
     goodyHut: GoodyHut,
@@ -19,12 +19,12 @@ export class Unit extends Action implements IAction {
   ) {
     super(goodyHut, unit);
 
-    this.#randomNumberGenerator = randomNumberGenerator;
-    this.#ruleRegistry = rulesRegistry;
+    this._randomNumberGenerator = randomNumberGenerator;
+    this._ruleRegistry = rulesRegistry;
   }
 
   perform(): void {
-    this.#ruleRegistry.process(UnitRule, this.goodyHut(), this.unit());
+    this._ruleRegistry.process(UnitRule, this.goodyHut(), this.unit());
   }
 }
 
