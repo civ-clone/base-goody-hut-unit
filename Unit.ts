@@ -6,6 +6,7 @@ import {
 import GoodyHut from '@civ-clone/core-goody-hut/GoodyHut';
 import PlayerUnit from '@civ-clone/core-unit/Unit';
 import UnitRule from './Rules/Unit';
+import { instance as rngInstance } from '@civ-clone/core-random';
 
 export class Unit extends Action implements IAction {
   private _randomNumberGenerator: () => number;
@@ -14,7 +15,7 @@ export class Unit extends Action implements IAction {
   constructor(
     goodyHut: GoodyHut,
     unit: PlayerUnit,
-    randomNumberGenerator: () => number = (): number => Math.random(),
+    randomNumberGenerator: () => number = rngInstance,
     rulesRegistry: RuleRegistry = ruleRegistryInstance
   ) {
     super(goodyHut, unit);
