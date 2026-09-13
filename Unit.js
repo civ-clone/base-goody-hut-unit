@@ -16,5 +16,6 @@ class Unit extends Action_1.Action {
     }
 }
 exports.Unit = Unit;
+Unit.transient = ['_randomNumberGenerator', '_ruleRegistry'];
 exports.default = Unit;
 //# sourceMappingURL=Unit.js.map

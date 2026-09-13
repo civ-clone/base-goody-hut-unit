@@ -9,6 +9,7 @@ import UnitRule from './Rules/Unit';
 import { instance as rngInstance } from '@civ-clone/core-random';
 
 export class Unit extends Action implements IAction {
+  static readonly transient = ['_randomNumberGenerator', '_ruleRegistry'];
   private _randomNumberGenerator: () => number;
   private _ruleRegistry: RuleRegistry;
 
